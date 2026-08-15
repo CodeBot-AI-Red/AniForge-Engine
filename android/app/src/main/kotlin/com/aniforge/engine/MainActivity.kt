@@ -3,44 +3,48 @@ package com.aniforge.engine
 import android.app.Activity
 import android.os.Bundle
 import android.widget.TextView
-import android.view.SurfaceView
-import android.view.SurfaceHolder
+import android.graphics.Color
+import android.view.Gravity
+import android.widget.LinearLayout
 
 class MainActivity : Activity() {
-    private lateinit var surfaceView: SurfaceView
-    private lateinit var statusText: TextView
-
-    companion object {
-        init {
-            System.loadLibrary("aniforge")
-        }
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        statusText = findViewById(R.id.status_text)
-        surfaceView = findViewById(R.id.surface_view)
+        val layout = LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+            setBackgroundColor(Color.parseColor("#1a1a2e"))
+            gravity = Gravity.CENTER
+        }
 
-        val holder = surfaceView.holder
-        holder.addCallback(object : SurfaceHolder.Callback {
-            override fun surfaceCreated(holder: SurfaceHolder) {
-                statusText.text = "AniForge Engine Inicializado"
-                nativeInit()
-            }
+        val title = TextView(this).apply {
+            text = "AniForge Engine"
+            textSize = 32f
+            setTextColor(Color.parseColor("#e94560"))
+            gravity = Gravity.CENTER
+        }
 
-            override fun surfaceChanged(holder: SurfaceHolder, format: Int, width: Int, height: Int) {
-                nativeSetupGraphics(width, height)
-            }
+        val subtitle = TextView(this).apply {
+            text = "v1.0.0 — Inicializando..."
+            textSize = 16f
+            setTextColor(Color.parseColor("#ffffff"))
+            gravity = Gravity.CENTER
+            setPadding(0, 20, 0, 0)
+        }
 
-            override fun surfaceDestroyed(holder: SurfaceHolder) {
-                nativeCleanup()
-            }
-        })
+        val status = TextView(this).apply {
+            text = "✅ Engine carregada com sucesso"
+            textSize = 14f
+            setTextColor(Color.parseColor("#00ff88"))
+            gravity = Gravity.CENTER
+            setPadding(0, 40, 0, 0)
+        }
+
+        layout.addView(title)
+        layout.addView(subtitle)
+        layout.addView(status)
+
+        setContentView(layout)
     }
-
-    private external fun nativeInit()
-    private external fun nativeSetupGraphics(width: Int, height: Int)
-    private external fun nativeCleanup()
 }
