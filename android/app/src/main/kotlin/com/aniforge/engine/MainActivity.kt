@@ -2,11 +2,10 @@ package com.aniforge.engine
 
 import android.app.Activity
 import android.os.Bundle
-import android.widget.TextView
 import android.widget.ImageView
 import android.graphics.Color
-import android.view.Gravity
 import android.widget.LinearLayout
+import android.view.Gravity
 
 class MainActivity : Activity() {
 
@@ -15,38 +14,20 @@ class MainActivity : Activity() {
 
         val layout = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
-            setBackgroundColor(Color.parseColor("#1a1a2e"))
+            setBackgroundColor(Color.BLACK)
             gravity = Gravity.CENTER
         }
 
         val logo = ImageView(this).apply {
             setImageResource(R.drawable.logo)
-            layoutParams = LinearLayout.LayoutParams(400, 400).apply {
-                gravity = Gravity.CENTER
-            }
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT
+            )
             scaleType = ImageView.ScaleType.FIT_CENTER
         }
 
-        val subtitle = TextView(this).apply {
-            text = "v1.0.0 — Inicializando..."
-            textSize = 16f
-            setTextColor(Color.parseColor("#ffffff"))
-            gravity = Gravity.CENTER
-            setPadding(0, 20, 0, 0)
-        }
-
-        val status = TextView(this).apply {
-            text = "✅ Engine carregada com sucesso"
-            textSize = 14f
-            setTextColor(Color.parseColor("#00ff88"))
-            gravity = Gravity.CENTER
-            setPadding(0, 20, 0, 0)
-        }
-
         layout.addView(logo)
-        layout.addView(subtitle)
-        layout.addView(status)
-
         setContentView(layout)
     }
 }
