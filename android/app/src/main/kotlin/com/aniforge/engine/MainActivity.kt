@@ -3,6 +3,7 @@ package com.aniforge.engine
 import android.app.Activity
 import android.os.Bundle
 import android.widget.TextView
+import android.widget.ImageView
 import android.graphics.Color
 import android.view.Gravity
 import android.widget.LinearLayout
@@ -18,11 +19,12 @@ class MainActivity : Activity() {
             gravity = Gravity.CENTER
         }
 
-        val title = TextView(this).apply {
-            text = "AniForge Engine"
-            textSize = 32f
-            setTextColor(Color.parseColor("#e94560"))
-            gravity = Gravity.CENTER
+        val logo = ImageView(this).apply {
+            setImageResource(R.drawable.logo)
+            layoutParams = LinearLayout.LayoutParams(400, 400).apply {
+                gravity = Gravity.CENTER
+            }
+            scaleType = ImageView.ScaleType.FIT_CENTER
         }
 
         val subtitle = TextView(this).apply {
@@ -38,10 +40,10 @@ class MainActivity : Activity() {
             textSize = 14f
             setTextColor(Color.parseColor("#00ff88"))
             gravity = Gravity.CENTER
-            setPadding(0, 40, 0, 0)
+            setPadding(0, 20, 0, 0)
         }
 
-        layout.addView(title)
+        layout.addView(logo)
         layout.addView(subtitle)
         layout.addView(status)
 
