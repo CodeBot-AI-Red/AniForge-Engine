@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- Linha do Projeto -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="#1a1a1a">
+
+        <!-- Ícone do Projeto -->
+        <ImageView
+            android:id="@+id/project_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerInside" />
+
+        <!-- Informações do Projeto -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <!-- Nome do Projeto -->
+            <TextView
+                android:id="@+id/project_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Caminho -->
+            <TextView
+                android:id="@+id/project_path"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#999999"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
+
+            <!-- Versão e Data -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/project_version"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF6B00"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/project_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#666666"
+                    android:textSize="11sp"
+                    android:layout_marginStart="16dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Indicador de Erro -->
+        <ImageView
+            android:id="@+id/project_error"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="Erro"
+            android:visibility="gone"
+            android:scaleType="centerInside" />
+
+        <!-- Favorite Star -->
+        <ImageView
+            android:id="@+id/project_favorite"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="Favorito"
+            android:visibility="gone"
+            android:scaleType="centerInside" />
+
+    </LinearLayout>
+
+    <!-- Erro Message -->
+    <TextView
+        android:id="@+id/project_error_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FF6B00"
+        android:textSize="12sp"
+        android:visibility="gone"
+        android:paddingStart="76dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp" />
+
+</LinearLayout>
