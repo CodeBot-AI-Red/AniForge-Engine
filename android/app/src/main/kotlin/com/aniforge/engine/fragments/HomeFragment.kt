@@ -69,7 +69,7 @@ class HomeFragment : Fragment() {
                 path = "/storage/emulated/0/Documents/plugins-de-fora",
                 version = "4.7",
                 lastEdited = "2026-08-11 16:13:56",
-                iconRes = R.drawable.ic_launcher_foreground,
+                iconRes = R.drawable.ic_launcher,
                 isFavorite = false
             ),
             Project(
@@ -78,7 +78,7 @@ class HomeFragment : Fragment() {
                 path = "/storage/emulated/0/Documents/criar-plugins",
                 version = "4.7",
                 lastEdited = "2026-08-10 21:23:37",
-                iconRes = R.drawable.ic_launcher_foreground,
+                iconRes = R.drawable.ic_launcher,
                 isFavorite = false
             ),
             Project(
@@ -87,7 +87,7 @@ class HomeFragment : Fragment() {
                 path = "/storage/emulated/0/Documents/zone-hero",
                 version = "4.7",
                 lastEdited = "2026-08-10 00:16:50",
-                iconRes = R.drawable.ic_launcher_foreground,
+                iconRes = R.drawable.ic_launcher,
                 isFavorite = true
             ),
             Project(
@@ -96,7 +96,7 @@ class HomeFragment : Fragment() {
                 path = "/storage/emulated/0/Documents/trailer",
                 version = "4.6",
                 lastEdited = "2026-05-20 22:29:31",
-                iconRes = R.drawable.ic_launcher_foreground,
+                iconRes = R.drawable.ic_launcher,
                 isFavorite = false
             ),
             Project(
@@ -105,7 +105,7 @@ class HomeFragment : Fragment() {
                 path = "/storage/emulated/0/Documents/github-flash",
                 version = "4.6",
                 lastEdited = "2026-05-18 20:31:46",
-                iconRes = R.drawable.ic_launcher_foreground,
+                iconRes = R.drawable.ic_launcher,
                 isFavorite = false
             ),
             Project(
@@ -114,7 +114,7 @@ class HomeFragment : Fragment() {
                 path = "/storage/emulated/0/Documents/Otupos Max",
                 version = "4.5",
                 lastEdited = "2026-05-15 10:00:00",
-                iconRes = R.drawable.ic_launcher_foreground,
+                iconRes = R.drawable.ic_launcher,
                 hasError = true,
                 errorMessage = "Dados perdida"
             )
